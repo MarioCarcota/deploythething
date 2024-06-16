@@ -46,7 +46,6 @@ To get started with DeployTheThing, follow these steps:
     - Go to the [Firebase Console](https://console.firebase.google.com/).
     - Create a new project.
     - Add a web app to your project and follow the instructions to get your Firebase config.
-    - Update `firebaseConfig` in `src/firebaseConfig.js` with your Firebase configuration details.
 
 4. **Configure Environment Variables**:
 
@@ -58,7 +57,7 @@ To get started with DeployTheThing, follow these steps:
     NEXT_PUBLIC_FIREBASE_PROJECT_ID=your-firebase-project-id
     NEXT_PUBLIC_STRIPE_PUBLIC_KEY=your-stripe-public-key
     STRIPE_SECRET_KEY=your-stripe-secret-key
-    EMAIL_SERVICE_API_KEY=your-email-service-api-key
+    RESEND_API_KEY=your-email-service-api-key
     ```
 
 5. **Run the Development Server**:
@@ -73,15 +72,15 @@ To get started with DeployTheThing, follow these steps:
 
 ### Firebase
 
-Ensure your Firebase project is set up correctly by enabling the necessary services like Firestore, Authentication, and Hosting. Update the Firebase config in `src/firebaseConfig.js` with your project details.
+Ensure your Firebase project is set up correctly by enabling the necessary services like Firestore, Authentication, and Hosting. Update the Firebase env in `.env` with your project details.
 
 ### Email Service
 
-Integrate your preferred email service (e.g., SendGrid, Mailgun) by configuring the API key and other necessary settings in the environment variables.
+Integrate your ReSend the API key and you are good to go (You will find all the templates of emails in the folder `emails/examples`).
 
 ### Stripe
 
-Configure Stripe by adding your API keys to the environment variables and setting up the necessary payment endpoints in `pages/api/stripe`.
+Configure Stripe in your firebase project.
 
 ## Usage
 
@@ -94,23 +93,23 @@ Use the pre-configured ShadCNUI and TailwindCSS setup to build your application'
 
 ### Multi-language Support
 
-DeployTheThing includes built-in multi-language support, making it easy to create applications that cater to a global audience. You can add and configure additional languages in `src/i18n.js` and update the corresponding translation files in `src/locales`.
+DeployTheThing includes built-in multi-language support, making it easy to create applications that cater to a global audience. You can add and configure additional languages in `i18n.js` and update the corresponding translation files in `locales/`.
 
 ### Ready Components
 
-DeployTheThing comes with a collection of ready-made components that you can use to build your application quickly. These components are located in `src/components`. Customize them to fit your needs or use them as is to accelerate your development process.
+DeployTheThing comes with a collection of ready-made components that you can use to build your application quickly. These components are located in `landings/components`. Customize them to fit your needs or use them as is to accelerate your development process.
 
 ### Landing Pages
 
-The starter pack includes fully functional landing pages to help you get your project up and running quickly. These are designed to be easily customizable and can be found in `src/pages/landing`. You can use these as a starting point for your application's main pages.
+The starter pack includes fully functional landing pages to help you get your project up and running quickly. These are designed to be easily customizable and can be found in `landings`. You can use these as a starting point for your application's main pages.
 
 ### Adding Functionality
 
-Leverage Firebase for real-time data management, user authentication, and other backend services. Use the provided Firebase hooks and utilities in `src/hooks` and `src/utils` to streamline development.
+Leverage Firebase for real-time data management, user authentication, and other backend services. Use the provided Firebase hooks and utilities in `firebase/functions` to streamline development.
 
 ### Payment Integration
 
-Utilize the Stripe integration to manage payments. The setup includes basic configurations for handling subscriptions and one-time payments. Extend and customize the payment logic in `pages/api/stripe`.
+Utilize the Stripe integration in firebase to manage payments. The setup includes basic configurations for handling subscriptions and one-time payments.
 
 
 ## Contributing
